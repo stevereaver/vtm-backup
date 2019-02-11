@@ -6,12 +6,13 @@ Usage: Usage: vtm-backup.py [options]
 
 Options:
 
-    -t HOSTNAME
+    -h, --help         show this help message and exit
+    -t HOSTNAME, --hostname=HOSTNAME
                        hostname of VTM server
     -o OPERATION, --operation=list/download/create/delete
                        the operation to perform 
     -n NAME, --name=Backup Name
-                        the name of the backup file for download/create/delete
+                       the name of the backup file for download/create/delete
                         
 Author: Stephen Bancroft
   
