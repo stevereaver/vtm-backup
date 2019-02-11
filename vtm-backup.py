@@ -51,7 +51,7 @@ if not ((options.operation == 'list') or (options.operation == 'create') or (opt
 # Download backup
 if options.operation == "download":
   http = urllib3.PoolManager()
-  URL = 'https://'+options.hostName+':9070/api/tm/5.1/status/'+hostName+'/backups/full/'+options.backupName
+  URL = 'https://'+options.hostName+':9070/api/tm/5.1/status/'+options.hostName+'/backups/full/'+options.backupName
   PATH = options.backupName+'.tar'
   headers = {'accept': 'application/x-tar', 'authorization': 'Basic '+PASSWORD}
   response = http.request('GET', URL, headers=headers, preload_content=False)
@@ -62,7 +62,7 @@ if options.operation == "download":
 
 # Create a backup
 if options.operation == "create":
-  URL = 'https://'+options.hostName+':9070/api/tm/5.1/status/'+hostName+'/backups/full/'+options.backupName
+  URL = 'https://'+options.hostName+':9070/api/tm/5.1/status/'+options.hostName+'/backups/full/'+options.backupName
   headers = {'Content-Type': 'application/json', 'authorization': 'Basic '+PASSWORD}
   data = {
            'properties': {
@@ -77,7 +77,7 @@ if options.operation == "create":
 
 # List avaliable backups
 if options.operation == "list":
-  URL = 'https://'+options.hostName+':9070/api/tm/5.1/status/'+hostName+'/backups/full'
+  URL = 'https://'+options.hostName+':9070/api/tm/5.1/status/'+options.hostName+'/backups/full'
   headers = {'Content-Type': 'application/json', 'authorization': 'Basic '+PASSWORD}
   response = requests.get(URL, headers=headers, verify=False)
   if response.status_code != 200:
@@ -86,7 +86,7 @@ if options.operation == "list":
 
 # Delete avaliable backups
 if options.operation == "delete":
-  URL = 'https://'+options.hostName+':9070/api/tm/5.1/status/'+hostName+'/backups/full/'+options.backupName
+  URL = 'https://'+options.hostName+':9070/api/tm/5.1/status/'+options.hostName+'/backups/full/'+options.backupName
   headers = {'Content-Type': 'application/json', 'authorization': 'Basic '+PASSWORD}
   response = requests.delete(URL, headers=headers, verify=False)
   if response.status_code != 204:
