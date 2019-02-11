@@ -1,7 +1,9 @@
-Name: 
+Name:
   VTM Backup Manager 
+  
 Description: 
   This is a script to manage the backups from virtual traffic manager
+  
 Usage:
   Usage: vtm-backup.py [options]
 
@@ -13,5 +15,6 @@ Options:
                         the name of the backup file for download/create/delete
 Author:
   Stephen Bancroft
+  
 Email:
   bancroft@tt.com.au
