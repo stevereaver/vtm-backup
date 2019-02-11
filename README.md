@@ -6,6 +6,7 @@ Usage: Usage: vtm-backup.py [options]
 
 Options:
 
+    -t HOSTNAME
                        hostname of VTM server
     -o OPERATION, --operation=list/download/create/delete
                        the operation to perform 
